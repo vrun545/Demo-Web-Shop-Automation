@@ -42,13 +42,12 @@ class Test_Register:
         # Assertion
         assert status, "User registration failed !!!"
 
-
     @pytest.mark.searchproduct
     # Test Case for Searching a Product on Search-Box
     def test_searchProduct(self):
         status = self.register_page.searchProduct(productName)
         # Assertion
-        assert status, "Product search failed   !!!"
+        assert status, "Product search failed !!!"
 
     # Closing Driver
     def teardown_class(self):

@@ -1,4 +1,6 @@
 import time
+
+from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
 from helper.selenium_helper import Selenium_Helper
 
@@ -16,20 +18,24 @@ class LoginPage(Selenium_Helper):
         super().__init__(driver)
 
     def valid_login(self, username, password):
-        self.webElement_Enter(self.email_WebElement, username)
-        self.webElement_Enter(self.password_WebElement, password)
-        self.webElement_Click(self.loginBtn_WebElement)
-        # self.webElement_Click(self.logoutBtn_WebElement)
-        # self.webElement_Click(self.loginIcon_WebElement)
-        time.sleep(1)
+        try:
+            self.webElement_Enter(self.email_WebElement, username)
+            self.webElement_Enter(self.password_WebElement, password)
+            self.webElement_Click(self.loginBtn_WebElement)
+        except TimeoutException as e:
+            print(f"Exception occurred: {e}")
+            return False
 
     def invalid_login(self, username, password):
-        self.webElement_Enter(self.email_WebElement, username)
-        self.webElement_Enter(self.password_WebElement, password)
-        self.webElement_Click(self.loginBtn_WebElement)
-        self.clear_text(self.email_WebElement)
-        self.clear_text(self.password_WebElement)
-        time.sleep(1)
+        try:
+            self.webElement_Enter(self.email_WebElement, username)
+            self.webElement_Enter(self.password_WebElement, password)
+            self.webElement_Click(self.loginBtn_WebElement)
+            self.clear_text(self.email_WebElement)
+            self.clear_text(self.password_WebElement)
+        except TimeoutException as e:
+            print(f"Exception occurred: {e}")
+            return False
 
     def get_error_message(self):
         error_element = self.find_element(self.error_WebElement)
