@@ -58,7 +58,8 @@ class Test_Address:
     @pytest.mark.deleteaddress
     # Test Case for Deleting Address
     def test_deleteAddress(self):
-        self.add_address_page.delete_address()
+        status = self.add_address_page.delete_address()
+        assert status, "Address not deleted successfully !!!"
 
     # Closing driver
     def teardown_class(self):

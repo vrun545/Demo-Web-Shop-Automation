@@ -34,10 +34,10 @@ class AddAddressPage(Selenium_Helper):
 
     def delete_address(self):
         self.webElement_Click(self.deleteBtn)
-        time.sleep(2)
+        time.sleep(1)
         alert = self.driver.switch_to.alert
         alert.accept()
-        time.sleep(1)
+        return True
 
     def add_Address(self, firstname, lastname, email, company, country, city, address1, address2, postalcode, phoneno):
         self.webElement_Click(self.addBtn_WebElement)
