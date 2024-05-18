@@ -28,31 +28,47 @@ class AddAddressPage(Selenium_Helper):
     def __init__(self, driver):
         super().__init__(driver)
 
+    # Method for selecting country from Dropdown Element
     def select_country(self, country):
-        sel = Select(self.driver.find_element(*self.country_DropDown))
-        sel.select_by_visible_text(country)
+        try:
+            sel = Select(self.driver.find_element(*self.country_DropDown))
+            sel.select_by_visible_text(country)
+            return True
+        except Exception as e:
+            print(f"Exception occurred while selecting country: {e}")
+            return False
 
+    # Method for deleting addess
     def delete_address(self):
-        self.webElement_Click(self.deleteBtn)
-        time.sleep(1)
-        alert = self.driver.switch_to.alert
-        alert.accept()
-        return True
+        try:
+            self.webElement_Click(self.deleteBtn)
+            time.sleep(1)
+            alert = self.driver.switch_to.alert
+            alert.accept()
+            return True
+        except Exception as e:
+            print(f"Exception occurred while deleting address: {e}")
+            return False
 
+    # Method for adding address on Address Page
     def add_Address(self, firstname, lastname, email, company, country, city, address1, address2, postalcode, phoneno):
-        self.webElement_Click(self.addBtn_WebElement)
-        self.webElement_Enter(self.firstName_WebElement, firstname)
-        self.webElement_Enter(self.lastName_WebElement, lastname)
-        self.webElement_Enter(self.email_WebElement, email)
-        self.webElement_Enter(self.company_WebElement, company)
-        self.webElement_Enter(self.city_WebElement, city)
-        self.webElement_Enter(self.address1_WebElement, address1)
-        self.webElement_Enter(self.address2_WebElement, address2)
-        self.webElement_Enter(self.postalCode_WebElement, postalcode)
-        self.webElement_Enter(self.phoneno_WebElement, phoneno)
-        self.select_country(country)
-        self.webElement_Click(self.saveBtn)
-        time.sleep(1)
+        try:
+            self.webElement_Click(self.addBtn_WebElement)
+            self.webElement_Enter(self.firstName_WebElement, firstname)
+            self.webElement_Enter(self.lastName_WebElement, lastname)
+            self.webElement_Enter(self.email_WebElement, email)
+            self.webElement_Enter(self.company_WebElement, company)
+            self.webElement_Enter(self.city_WebElement, city)
+            self.webElement_Enter(self.address1_WebElement, address1)
+            self.webElement_Enter(self.address2_WebElement, address2)
+            self.webElement_Enter(self.postalCode_WebElement, postalcode)
+            self.webElement_Enter(self.phoneno_WebElement, phoneno)
+            self.select_country(country)
+            self.webElement_Click(self.saveBtn)
+            return True
+        except Exception as e:
+            print(f"Exception occurred while adding address: {e}")
+            return False
 
     def click_addresses_link(self):
         self.webElement_Click(self.addresses_link)
