@@ -1,4 +1,6 @@
 from pytest import mark
+from selenium.common import TimeoutException
+
 from conftest import *
 from pages.LoginPage import LoginPage
 import configparser
@@ -36,12 +38,17 @@ class Test_Register:
     # Test Case for Registering as New User
     @pytest.mark.register
     def test_registration(self):
-        self.register_page.register(firstname, lastname, email, password)
+        status = self.register_page.register(firstname, lastname, email, password)
+        # Assertion
+        assert status, "User registration failed !!!"
+
 
     @pytest.mark.searchproduct
     # Test Case for Searching a Product on Search-Box
     def test_searchProduct(self):
-        self.register_page.searchProduct(productName)
+        status = self.register_page.searchProduct(productName)
+        # Assertion
+        assert status, "Product search failed   !!!"
 
     # Closing Driver
     def teardown_class(self):
