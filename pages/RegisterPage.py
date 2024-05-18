@@ -1,4 +1,6 @@
 import time
+
+from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
 from helper.selenium_helper import Selenium_Helper
 
@@ -19,17 +21,25 @@ class RegisterPage(Selenium_Helper):
         super().__init__(driver)
 
     def register(self, firstname, lastname, email, password):
-        self.webElement_Click(self.gender_RadioBtn)
-        self.webElement_Enter(self.firstName_WebElement, firstname)
-        self.webElement_Enter(self.lastName_WebElement, lastname)
-        self.webElement_Enter(self.email_WebElement, email)
-        self.webElement_Enter(self.password_WebElement, password)
-        self.webElement_Enter(self.confirmPassword_WebElement, password)
-        self.webElement_Click(self.registerBtn)
-        self.webElement_Click(self.continueBtn)
-        time.sleep(1)
+        try:
+            self.webElement_Click(self.gender_RadioBtn)
+            self.webElement_Enter(self.firstName_WebElement, firstname)
+            self.webElement_Enter(self.lastName_WebElement, lastname)
+            self.webElement_Enter(self.email_WebElement, email)
+            self.webElement_Enter(self.password_WebElement, password)
+            self.webElement_Enter(self.confirmPassword_WebElement, password)
+            self.webElement_Click(self.registerBtn)
+            self.webElement_Click(self.continueBtn)
+            return True
+        except TimeoutException as e:
+            print(f"Exception occurred: {e}")
+            return False
 
     def searchProduct(self, productName):
-        self.webElement_Enter(self.searchBox_WebElement, productName)
-        self.webElement_Click(self.searchBtn)
-        time.sleep(1)
+        try:
+            self.webElement_Enter(self.searchBox_WebElement, productName)
+            self.webElement_Click(self.searchBtn)
+            return True
+        except TimeoutException as e:
+            print(f"Exception occurred: {e}")
+            return False
