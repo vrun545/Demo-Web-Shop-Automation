@@ -59,7 +59,7 @@ class Test_Address:
     # Test Case for Deleting Address
     def test_deleteAddress(self):
         status = self.add_address_page.delete_address()
-        assert status, "Address not deleted successfully !!!"
+        assert status, "Address not deleted yet !!!"
 
     # Closing driver
     def teardown_class(self):
