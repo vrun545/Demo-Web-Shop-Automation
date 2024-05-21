@@ -1,6 +1,3 @@
-Sure, here's the updated section for your README file:
-
-```markdown
 ## Features
 
 - **Test Cases**: Automates various test cases for the DemoWebShop website, covering functionalities such as account creation, login, profile management, and search functionality.
@@ -70,5 +67,3 @@ Contributions are welcome! Please feel free to submit a pull request for any imp
 
 This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute it as per the terms of the license.
 ``` 
-
-This update highlights the addition of logging functionality in your project. Feel free to further customize it as needed!
