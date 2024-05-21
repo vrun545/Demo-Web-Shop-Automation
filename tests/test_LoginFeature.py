@@ -1,4 +1,5 @@
 import pytest
+import logging
 from selenium.webdriver.common.by import By
 from conftest import *
 from pages.LoginPage import LoginPage
@@ -28,13 +29,14 @@ class Test_Login:
 
     # Launching Website and Maximize Window Size
     def setup_class(self):
-        self.driver.get(BaseUrl+"login")
+        self.driver.get(BaseUrl + "login")
         self.driver.maximize_window()
         self.login_page = LoginPage(self.driver)
 
     @pytest.mark.invalidlogin
     # Test Case for testing login-feature with Invalid Credentials
     def test_invalidLogin(self):
+        logging.info("Starting invalid login test.")
         self.login_page.invalid_login(email2, password2)
         error_text = self.login_page.get_error_message()
         expected_errors = ["Login was unsuccessful. Please correct the errors and try again.",
@@ -42,16 +44,18 @@ class Test_Login:
         # Assertion
         assert any(
             expected_error in error_text for expected_error in expected_errors), "Login was unsuccessful"
-
+        logging.info("Invalid login test case completed.")
 
     @pytest.mark.validlogin
     # Test Case for testing login-feature with Valid Credentials
     def test_validLogin(self):
+        logging.info("Starting valid login test.")
         self.login_page.valid_login(email1, password1)
         actual_text = self.login_page.get_email()
         expected_text = email1
         # Assertion
         assert actual_text == expected_text, "Email does not match after login"
+        logging.info("Valid login test case completed.")
 
     # Closing driver
     def teardown_class(self):
