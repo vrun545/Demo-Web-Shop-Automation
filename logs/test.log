@@ -1,0 +1,25 @@
+2024-05-21 12:23:30 PM - INFO - ====== WebDriver manager ======
+2024-05-21 12:23:31 PM - INFO - Get LATEST chromedriver version for google-chrome
+2024-05-21 12:23:31 PM - INFO - Get LATEST chromedriver version for google-chrome
+2024-05-21 12:23:31 PM - INFO - Driver [.wdm\drivers\chromedriver\win64\124.0.6367.207\chromedriver-win32/chromedriver.exe] found in cache
+2024-05-21 12:23:35 PM - INFO - Starting registration test...
+2024-05-21 12:23:47 PM - ERROR - Test case test_registration[chrome] failed. Details: <ExceptionInfo AssertionError('User registration failed !!!\nassert False') tblen=28>
+2024-05-21 12:23:47 PM - INFO - Starting product search test...
+2024-05-21 12:23:48 PM - INFO - Product search test completed successfully.
+2024-05-21 12:24:11 PM - INFO - ====== WebDriver manager ======
+2024-05-21 12:24:12 PM - INFO - Get LATEST chromedriver version for google-chrome
+2024-05-21 12:24:12 PM - INFO - Get LATEST chromedriver version for google-chrome
+2024-05-21 12:24:12 PM - INFO - Driver [.wdm\drivers\chromedriver\win64\124.0.6367.207\chromedriver-win32/chromedriver.exe] found in cache
+2024-05-21 12:24:16 PM - INFO - Starting invalid login test.
+2024-05-21 12:24:17 PM - INFO - Invalid login test case completed.
+2024-05-21 12:24:17 PM - INFO - Starting valid login test.
+2024-05-21 12:24:18 PM - INFO - Valid login test case completed.
+2024-05-21 12:24:41 PM - INFO - ====== WebDriver manager ======
+2024-05-21 12:24:42 PM - INFO - Get LATEST chromedriver version for google-chrome
+2024-05-21 12:24:42 PM - INFO - Get LATEST chromedriver version for google-chrome
+2024-05-21 12:24:42 PM - INFO - Driver [.wdm\drivers\chromedriver\win64\124.0.6367.207\chromedriver-win32/chromedriver.exe] found in cache
+2024-05-21 12:24:46 PM - INFO - Starting test_addAddress...
+2024-05-21 12:24:52 PM - INFO - Test test_addAddress completed successfully.
+2024-05-21 12:24:52 PM - INFO - Starting test_deleteAddress...
+2024-05-21 12:24:53 PM - INFO - Test test_deleteAddress completed successfully.
+2024-05-21 12:24:53 PM - INFO - Tearing down the test class...
