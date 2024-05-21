@@ -66,5 +66,4 @@ class Test_Address:
 
     # Closing driver
     def teardown_class(self):
-        logging.info("Tearing down the test class...")
         self.driver.quit()
