@@ -1,8 +1,6 @@
+Sure, here's the updated section for your README file:
 
-# Automated Testing Framework for DemoWebShop
-
-This repository contains a pytest framework for automated testing of the DemoWebShop website. The framework includes the following features:
-
+```markdown
 ## Features
 
 - **Test Cases**: Automates various test cases for the DemoWebShop website, covering functionalities such as account creation, login, profile management, and search functionality.
@@ -17,7 +15,7 @@ This repository contains a pytest framework for automated testing of the DemoWeb
 
 - **Headless and Non-Headless Mode**: Tests are executable on both headless and non-headless modes for Chrome and Firefox browsers.
 
-- **Pytest Features**: Utilizes pytest features for organized test cases, parameterization, and fixtures.
+- **Pytest Features**: Utilizes pytest features for organized test cases, parameterization, fixtures, and now logging functionality.
 
 - **Page Object Model (POM)**: Implements the Page Object Model for improved code readability and maintainability.
 
@@ -25,19 +23,7 @@ This repository contains a pytest framework for automated testing of the DemoWeb
 
 - **Tagging**: Tags are implemented for each test case, allowing for selective test execution.
 
-## Prerequisites
-
-- Python installed on your system.
-- Web drivers for Chrome and Firefox installed and added to PATH.
-- Internet connection to access the DemoWebShop website.
-
-## Getting Started
-
-1. Clone this repository to your local machine.
-2. Navigate to the root directory of the repository.
-3. Install the required dependencies using `pip install -r requirements.txt`.
-4. Modify the global configuration file (`config/global_config.py`) if necessary.
-5. Run the tests using `pytest`.
+- **Logging**: Logging functionality has been added to provide detailed information during test execution for better debugging and analysis.
 
 ## Usage
 
@@ -65,7 +51,7 @@ pytest -v -k "headless"
 
 You can combine these options as needed. For example, to run tests on Chrome browser in headless mode:
 ```bash
-pytest -v -k "chrome and headless"
+pytest -v -k "test_LoginFeature.py and headless" -s
 ```
 
 Feel free to adjust the options according to your requirements and browser configurations.
@@ -83,4 +69,6 @@ Contributions are welcome! Please feel free to submit a pull request for any imp
 ## License
 
 This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute it as per the terms of the license.
-```
+``` 
+
+This update highlights the addition of logging functionality in your project. Feel free to further customize it as needed!
