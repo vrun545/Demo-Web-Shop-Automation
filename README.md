@@ -1,3 +1,8 @@
+
+# Automated Testing Framework for DemoWebShop
+
+This repository contains a pytest framework for automated testing of the DemoWebShop website. The framework includes the following features:
+
 ## Features
 
 - **Test Cases**: Automates various test cases for the DemoWebShop website, covering functionalities such as account creation, login, profile management, and search functionality.
