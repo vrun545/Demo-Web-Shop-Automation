@@ -1,25 +1,25 @@
-2024-05-21 16:30:18 PM - INFO - ====== WebDriver manager ======
-2024-05-21 16:30:19 PM - INFO - Get LATEST chromedriver version for google-chrome
-2024-05-21 16:30:19 PM - INFO - Get LATEST chromedriver version for google-chrome
-2024-05-21 16:30:20 PM - INFO - Driver [C:\Users\varunbajpai\.wdm\drivers\chromedriver\win64\124.0.6367.207\chromedriver-win32/chromedriver.exe] found in cache
-2024-05-21 16:30:24 PM - INFO - Starting registration test...
-2024-05-21 16:30:35 PM - INFO - Screenshot captured: screenshots\test_registration[chrome]_2024-05-21_16-30-35.png
-2024-05-21 16:30:35 PM - ERROR - Test case test_registration[chrome] failed. Details: <ExceptionInfo AssertionError('User registration failed !!!\nassert False') tblen=28>
-2024-05-21 16:30:35 PM - INFO - Starting product search test...
-2024-05-21 16:30:36 PM - INFO - Product search test completed successfully.
-2024-05-21 16:30:59 PM - INFO - ====== WebDriver manager ======
-2024-05-21 16:31:00 PM - INFO - Get LATEST chromedriver version for google-chrome
-2024-05-21 16:31:00 PM - INFO - Get LATEST chromedriver version for google-chrome
-2024-05-21 16:31:00 PM - INFO - Driver [C:\Users\varunbajpai\.wdm\drivers\chromedriver\win64\124.0.6367.207\chromedriver-win32/chromedriver.exe] found in cache
-2024-05-21 16:31:04 PM - INFO - Starting invalid login test.
-2024-05-21 16:31:04 PM - INFO - Invalid login test case completed.
-2024-05-21 16:31:04 PM - INFO - Starting valid login test.
-2024-05-21 16:31:06 PM - INFO - Valid login test case completed.
-2024-05-21 16:31:29 PM - INFO - ====== WebDriver manager ======
-2024-05-21 16:31:30 PM - INFO - Get LATEST chromedriver version for google-chrome
-2024-05-21 16:31:30 PM - INFO - Get LATEST chromedriver version for google-chrome
-2024-05-21 16:31:30 PM - INFO - Driver [C:\Users\varunbajpai\.wdm\drivers\chromedriver\win64\124.0.6367.207\chromedriver-win32/chromedriver.exe] found in cache
-2024-05-21 16:31:34 PM - INFO - Starting test_addAddress...
-2024-05-21 16:31:39 PM - INFO - Test test_addAddress completed successfully.
-2024-05-21 16:31:39 PM - INFO - Starting test_deleteAddress...
-2024-05-21 16:31:40 PM - INFO - Test test_deleteAddress completed successfully.
+2024-05-21 18:41:08 PM - INFO - ====== WebDriver manager ======
+2024-05-21 18:41:09 PM - INFO - Get LATEST chromedriver version for google-chrome
+2024-05-21 18:41:09 PM - INFO - Get LATEST chromedriver version for google-chrome
+2024-05-21 18:41:09 PM - INFO - Driver [C:\Users\varunbajpai\.wdm\drivers\chromedriver\win64\124.0.6367.207\chromedriver-win32/chromedriver.exe] found in cache
+2024-05-21 18:41:13 PM - INFO - Starting registration test...
+2024-05-21 18:41:25 PM - INFO - Screenshot captured: screenshots\test_registration[headless]_2024-05-21_18-41-25.png
+2024-05-21 18:41:25 PM - ERROR - Test case test_registration[headless] failed. Details: <ExceptionInfo AssertionError('User registration failed !!!\nassert False') tblen=28>
+2024-05-21 18:41:25 PM - INFO - Starting product search test...
+2024-05-21 18:41:26 PM - INFO - Product search test completed successfully.
+2024-05-21 18:41:48 PM - INFO - ====== WebDriver manager ======
+2024-05-21 18:41:49 PM - INFO - Get LATEST chromedriver version for google-chrome
+2024-05-21 18:41:49 PM - INFO - Get LATEST chromedriver version for google-chrome
+2024-05-21 18:41:49 PM - INFO - Driver [C:\Users\varunbajpai\.wdm\drivers\chromedriver\win64\124.0.6367.207\chromedriver-win32/chromedriver.exe] found in cache
+2024-05-21 18:41:53 PM - INFO - Starting invalid login test.
+2024-05-21 18:41:54 PM - INFO - Invalid login test case completed.
+2024-05-21 18:41:54 PM - INFO - Starting valid login test.
+2024-05-21 18:41:56 PM - INFO - Valid login test case completed.
+2024-05-21 18:42:18 PM - INFO - ====== WebDriver manager ======
+2024-05-21 18:42:19 PM - INFO - Get LATEST chromedriver version for google-chrome
+2024-05-21 18:42:19 PM - INFO - Get LATEST chromedriver version for google-chrome
+2024-05-21 18:42:19 PM - INFO - Driver [C:\Users\varunbajpai\.wdm\drivers\chromedriver\win64\124.0.6367.207\chromedriver-win32/chromedriver.exe] found in cache
+2024-05-21 18:42:23 PM - INFO - Starting test_addAddress...
+2024-05-21 18:42:29 PM - INFO - Test test_addAddress completed successfully.
+2024-05-21 18:42:29 PM - INFO - Starting test_deleteAddress...
+2024-05-21 18:42:30 PM - INFO - Test test_deleteAddress completed successfully.
