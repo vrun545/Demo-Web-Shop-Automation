@@ -3,6 +3,7 @@ from pathlib import Path
 
 import allure
 import pytest
+import pytest_html
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.chrome.options import Options as ChromeOptions
@@ -74,14 +75,30 @@ def pytest_html_report_title(report):
 # Hook function to log additional information when a test fails
 # def pytest_runtest_makereport(item, call):
 #     if call.when == "call" and call.excinfo is not None:
+#         # Capture screenshot on failure
+#         now = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+#         screenshot_dir = Path("screenshots")
+#         screenshot_dir.mkdir(parents=True, exist_ok=True)  # Create directory if it doesn't exist
+#         screenshot_path = screenshot_dir / f"{item.name}_{now}.png"
+#         try:
+#             item.cls.driver.save_screenshot(str(screenshot_path))  # Convert Path object to string
+#             logging.info(f"Screenshot captured: {screenshot_path}")
+#         except WebDriverException:
+#             logging.error("Failed to capture screenshot")
+#         # Log additional information about the failure
 #         logging.error(f"Test case {item.name} failed. Details: {call.excinfo}")
-# Hook function to attach screenshot on extent-report and log additional information when a test fails
+
+# Hook function to log additional information when a test fails
+@pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item, call):
-    if call.when == "call" and call.excinfo is not None:
+    outcome = yield
+    report = outcome.get_result()
+    extras = getattr(report, "extras", [])
+    if report.when == "call" and call.excinfo is not None:
         # Capture screenshot on failure
         now = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
         screenshot_dir = Path("screenshots")
-        screenshot_dir.mkdir(parents=True, exist_ok=True)  # Create directory if it doesn't exist
+        screenshot_dir.mkdir(parents=True, exist_ok=True)
         screenshot_path = screenshot_dir / f"{item.name}_{now}.png"
         try:
             item.cls.driver.save_screenshot(str(screenshot_path))  # Convert Path object to string
@@ -89,9 +106,12 @@ def pytest_runtest_makereport(item, call):
         except WebDriverException:
             logging.error("Failed to capture screenshot")
 
-        # Attach screenshot to the Extent Report
-        with open(screenshot_path, "rb") as f:
-            allure.attach(f.read(), name="Screenshot", attachment_type=allure.attachment_type.PNG)
+        # Attach screenshot to the extent report
+        if screenshot_path:
+            html = f'<div><img src="../../{screenshot_path}" alt="screenshot" style="width:304px;height:228px;" onclick="window.open(this.src)" align="right"/></div>'
+            extras.append(pytest_html.extras.html(html))
 
         # Log additional information about the failure
         logging.error(f"Test case {item.name} failed. Details: {call.excinfo}")
+
+    report.extras = extras
