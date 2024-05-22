@@ -27,6 +27,9 @@ This repository contains a pytest framework for automated testing of the DemoWeb
 
 - **Logging**: Logging functionality has been added to provide detailed information during test execution for better debugging and analysis.
 
+- **Screenshots for Failed Test Cases**: Automatically captures and attaches screenshots in the extent report for failed test cases.
+  
+  
 ## Usage
 
 Certainly! Here's a paragraph you can add to your README file:
