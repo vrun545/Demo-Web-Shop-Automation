@@ -73,22 +73,6 @@ def pytest_html_report_title(report):
     report.title = "WebShop Test Report"
 
 # Hook function to log additional information when a test fails
-# def pytest_runtest_makereport(item, call):
-#     if call.when == "call" and call.excinfo is not None:
-#         # Capture screenshot on failure
-#         now = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-#         screenshot_dir = Path("screenshots")
-#         screenshot_dir.mkdir(parents=True, exist_ok=True)  # Create directory if it doesn't exist
-#         screenshot_path = screenshot_dir / f"{item.name}_{now}.png"
-#         try:
-#             item.cls.driver.save_screenshot(str(screenshot_path))  # Convert Path object to string
-#             logging.info(f"Screenshot captured: {screenshot_path}")
-#         except WebDriverException:
-#             logging.error("Failed to capture screenshot")
-#         # Log additional information about the failure
-#         logging.error(f"Test case {item.name} failed. Details: {call.excinfo}")
-
-# Hook function to log additional information when a test fails
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item, call):
     outcome = yield
