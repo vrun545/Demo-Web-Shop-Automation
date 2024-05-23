@@ -32,8 +32,6 @@ This repository contains a pytest framework for automated testing of the DemoWeb
   
 ## Usage
 
-Certainly! Here's a paragraph you can add to your README file:
-
 ```markdown
 ## Running Tests on Specific Browser and Headless Mode
 
